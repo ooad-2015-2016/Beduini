@@ -198,6 +198,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DogadjajsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KomentarsController.cs" />
+    <Compile Include="Controllers\LokalsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NalogsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -206,6 +208,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dogadjaj.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Komentar.cs" />
+    <Compile Include="Models\Lokal.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Nalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -282,6 +286,16 @@
     <Content Include="Views\Dogadjajs\Details.cshtml" />
     <Content Include="Views\Dogadjajs\Edit.cshtml" />
     <Content Include="Views\Dogadjajs\Index.cshtml" />
+    <Content Include="Views\Lokals\Create.cshtml" />
+    <Content Include="Views\Lokals\Delete.cshtml" />
+    <Content Include="Views\Lokals\Details.cshtml" />
+    <Content Include="Views\Lokals\Edit.cshtml" />
+    <Content Include="Views\Lokals\Index.cshtml" />
+    <Content Include="Views\Komentars\Create.cshtml" />
+    <Content Include="Views\Komentars\Delete.cshtml" />
+    <Content Include="Views\Komentars\Details.cshtml" />
+    <Content Include="Views\Komentars\Edit.cshtml" />
+    <Content Include="Views\Komentars\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
