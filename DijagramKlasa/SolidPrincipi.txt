@@ -1,0 +1,61 @@
+         SOLID principi
+------------------------------------
+
+-Princip pojedinaène odgovornosti 
+
+KLASA BI TREBALA IMATI SAMO JEDAN RAZLOG ZA PROMJENU.
+
+Klase imaju pojedinaènu odgovornost, i postoji samo jedan razlog za promjenu klase, 
+dakle klase znaju o jednoj stvari, što znaèi da je ovaj princip zadovoljen. 
+Ako razmotrimo klase primjeæujemo da smo sve koncepte ovih klasa odvojili u 
+vlastite klase tako da svaka klasa ima samo jedan razlog za promjenu. 
+Svaka klasa je odvojena tako da smo dobili razdvajanje poslova tj. rašèlanjivanje poslova u manje dijelove, što je i bit ovog principa.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-Otvoreno zatvoren princip
+
+ENTITETI SOFTVERA (KLASE, MODULI, FUNKCIJE) TREBALI BI BITI OTVORENI ZA NADOGRADNJU, ALI ZATVORENI ZA MODIFIKACIJE.
+
+Kreiranjem klasa omoguæili smo mijenjanje okruženja oko modula bez promjene samog modula, 
+sto znaèi da je i ovaj princip zadovoljen. Promjene u implementacijama klasa ne mogu forsirati modifikaciju neke druge klase.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-Liskov princip zamjene 
+
+PODTIPOVI MORAJU BITI ZAMJENJIVI NJIHOVIM OSNOVNIM TIPOVIMA.
+
+Vidimo da su klase : Korisnik, Administrator, Radnik,  Poslodavac odvojene kao vlastite klase.
+ Iako su Administrator, Radnik i Poslodavac na neki naèin i korisnici sistema, ove uloge su potpuno razlièite,
+ što znaèi da bi bila greška ukoliko bismo ih naslijedili iz klase Korisnik. 
+Ove klase nisu zamjenljive Korisnik klasom, jer na korisnike Korisnik klase utièe prisustvo klasa Administrator,
+ Radnik, Poslodavac. Stavljanjem ovih klasa kao vlastitih klasa, zadovoljen je Liskov princip zamjene. 
+Kako nema izvedenih klasa, ne možemo napraviti neki „nelegalan“ poziv funkcije na izvedenoj klasi, a tim èinom se krši Liskov princip zamjene.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-Princip inverzije ovisnosti
+
+A. MODULI VISOKOG NIVOA NE BI TREBALI OVISITI OD MODULA NISKOG NIVOA. OBA BI TREBALO DA OVISE OD APSTRAKCIJA. 
+B. MODULI NE BI TREBALI OVISITI OD DETALJA. DETALJI BI TREBALI BITI OVISNI OD APSTRAKCIJA.
+
+Da bi ovaj princip bio zadovoljen, ne treba ovisiti od konkretnih klasa, te prilikom nasljeðivanja
+ treba razmotriti sluèaj da je osnovna klasa apstraktna. Naime, bolje je ovisiti o apstrakcijama nego 
+o stvarnim klasama, pa ukoliko se pridržavamo reèenog, smanjuje se utjecaj koji promjena može imati na sistem.
+Ovaj princip je veoma lako provjeriti ukoliko pratimo svaku strelicu na UML dijagramu i provjerimo 
+da li je cilj strelice interfejs ili neka apstraktna klasa. U našem sluèaju vidimo da je princip inverzne ovisnosti ispoštovan.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-Princip izoliranja interfejsa
+
+KLIJENTI NE TREBA DA OVISE O METODAMA KOJE NEÆE UPOTREBLJAVATI.
+
+Naše klase nemaju desetine ili stotine metoda. Naime korisnici takvih sistema rijetko 
+upotrebljavaju sve njihove metode a podliježu utjecaju promjena napravljenih nad metodama
+ koje oni ne pozivaju i time narušavaju ovaj princip. U našem sluèaju, klase nemaju još uvijek 
+nikakvih metoda, osim getera i setera, sto znaèi da je ovaj princip ispoštovan.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
