@@ -10,107 +10,107 @@ using LetsGoOutApp.Models;
 
 namespace LetsGoOutApp.Controllers
 {
-    public class NalogsController : Controller
+    public class DogadjajiController : Controller
     {
-        private NalogDbContext db = new NalogDbContext();
+        private DogadjajDbContext db = new DogadjajDbContext();
 
-        // GET: Nalogs
+        // GET: Dogadjaji
         public ActionResult Index()
         {
-            return View(db.Nalog.ToList());
+            return View(db.Dogadjaj.ToList());
         }
 
-        // GET: Nalogs/Details/5
+        // GET: Dogadjaji/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nalog nalog = db.Nalog.Find(id);
-            if (nalog == null)
+            Dogadjaj dogadjaj = db.Dogadjaj.Find(id);
+            if (dogadjaj == null)
             {
                 return HttpNotFound();
             }
-            return View(nalog);
+            return View(dogadjaj);
         }
 
-        // GET: Nalogs/Create
+        // GET: Dogadjaji/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Nalogs/Create
+        // POST: Dogadjaji/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,korisnickoIme,password,email,datumKreiranja")] Nalog nalog)
+        public ActionResult Create([Bind(Include = "ID,datum,naziv,opis,cijena")] Dogadjaj dogadjaj)
         {
             if (ModelState.IsValid)
             {
-                db.Nalog.Add(nalog);
+                db.Dogadjaj.Add(dogadjaj);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(nalog);
+            return View(dogadjaj);
         }
 
-        // GET: Nalogs/Edit/5
+        // GET: Dogadjaji/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nalog nalog = db.Nalog.Find(id);
-            if (nalog == null)
+            Dogadjaj dogadjaj = db.Dogadjaj.Find(id);
+            if (dogadjaj == null)
             {
                 return HttpNotFound();
             }
-            return View(nalog);
+            return View(dogadjaj);
         }
 
-        // POST: Nalogs/Edit/5
+        // POST: Dogadjaji/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,korisnickoIme,password,email,datumKreiranja")] Nalog nalog)
+        public ActionResult Edit([Bind(Include = "ID,datum,naziv,opis,cijena")] Dogadjaj dogadjaj)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(nalog).State = EntityState.Modified;
+                db.Entry(dogadjaj).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(nalog);
+            return View(dogadjaj);
         }
 
-        // GET: Nalogs/Delete/5
+        // GET: Dogadjaji/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nalog nalog = db.Nalog.Find(id);
-            if (nalog == null)
+            Dogadjaj dogadjaj = db.Dogadjaj.Find(id);
+            if (dogadjaj == null)
             {
                 return HttpNotFound();
             }
-            return View(nalog);
+            return View(dogadjaj);
         }
 
-        // POST: Nalogs/Delete/5
+        // POST: Dogadjaji/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Nalog nalog = db.Nalog.Find(id);
-            db.Nalog.Remove(nalog);
+            Dogadjaj dogadjaj = db.Dogadjaj.Find(id);
+            db.Dogadjaj.Remove(dogadjaj);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

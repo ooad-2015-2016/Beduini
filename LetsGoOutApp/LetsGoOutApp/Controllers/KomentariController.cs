@@ -10,107 +10,107 @@ using LetsGoOutApp.Models;
 
 namespace LetsGoOutApp.Controllers
 {
-    public class LokalsController : Controller
+    public class KomentariController : Controller
     {
-        private LokalDbContext db = new LokalDbContext();
+        private KomentarDbContext db = new KomentarDbContext();
 
-        // GET: Lokals
+        // GET: Komentari
         public ActionResult Index()
         {
-            return View(db.Lokal.ToList());
+            return View(db.Komentar.ToList());
         }
 
-        // GET: Lokals/Details/5
+        // GET: Komentari/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lokal lokal = db.Lokal.Find(id);
-            if (lokal == null)
+            Komentar komentar = db.Komentar.Find(id);
+            if (komentar == null)
             {
                 return HttpNotFound();
             }
-            return View(lokal);
+            return View(komentar);
         }
 
-        // GET: Lokals/Create
+        // GET: Komentari/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Lokals/Create
+        // POST: Komentari/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,naziv,adresa,postanskiBroj,grad,lat,lng,opis")] Lokal lokal)
+        public ActionResult Create([Bind(Include = "ID,datum,sadrzaj,ocjena,datumKreiranja")] Komentar komentar)
         {
             if (ModelState.IsValid)
             {
-                db.Lokal.Add(lokal);
+                db.Komentar.Add(komentar);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(lokal);
+            return View(komentar);
         }
 
-        // GET: Lokals/Edit/5
+        // GET: Komentari/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lokal lokal = db.Lokal.Find(id);
-            if (lokal == null)
+            Komentar komentar = db.Komentar.Find(id);
+            if (komentar == null)
             {
                 return HttpNotFound();
             }
-            return View(lokal);
+            return View(komentar);
         }
 
-        // POST: Lokals/Edit/5
+        // POST: Komentari/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,naziv,adresa,postanskiBroj,grad,lat,lng,opis")] Lokal lokal)
+        public ActionResult Edit([Bind(Include = "ID,datum,sadrzaj,ocjena,datumKreiranja")] Komentar komentar)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(lokal).State = EntityState.Modified;
+                db.Entry(komentar).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(lokal);
+            return View(komentar);
         }
 
-        // GET: Lokals/Delete/5
+        // GET: Komentari/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lokal lokal = db.Lokal.Find(id);
-            if (lokal == null)
+            Komentar komentar = db.Komentar.Find(id);
+            if (komentar == null)
             {
                 return HttpNotFound();
             }
-            return View(lokal);
+            return View(komentar);
         }
 
-        // POST: Lokals/Delete/5
+        // POST: Komentari/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Lokal lokal = db.Lokal.Find(id);
-            db.Lokal.Remove(lokal);
+            Komentar komentar = db.Komentar.Find(id);
+            db.Komentar.Remove(komentar);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
