@@ -16,6 +16,7 @@ namespace LetsGoOutApp.Models
         public double lat { get; set; }
         public double lng { get; set; }
         public string opis { get; set; }
+        
     }
     public class LokalDbContext : DbContext
     {
