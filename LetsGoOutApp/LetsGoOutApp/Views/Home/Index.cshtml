@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<LetsGoOutApp.Models.Dogadjaj>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -8,6 +10,21 @@
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Šta se dešava?</h1>
+    </div>
+    @foreach (var item in Model) {
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">@Html.DisplayFor(modelItem => item.naziv)</div>
+                <div class="panel-body">
+                    @Html.DisplayFor(modelItem => item.opis)
+                </div>
+            </div>
+        </div>
+    }
+</div>
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
