@@ -9,7 +9,15 @@
     <meta charset="utf-8">
     <title>@ViewBag.Title</title>
     <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-    @Styles.Render("~/Content/css");
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/skel.min.js"></script>
+    <script src="~/Scripts/skel-layers.min.js"></script>
+    <script src="~/Scripts/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="~/Content/skel.css" />
+        <link rel="stylesheet" href="~/Content/style.css" />
+        <link rel="stylesheet" href="~/Content/style-xlarge.css" />
+    </noscript>
 </head>
 <body class="@ViewBag.BodyClass">
     <header id="header">
