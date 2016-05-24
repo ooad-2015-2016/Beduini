@@ -1,30 +1,27 @@
 ﻿@model IEnumerable<LetsGoOutApp.Models.Dogadjaj>
 
 @{
-    ViewBag.Title = "Početna";
+    ViewBag.Title = "Home Page";
 }
 
-<section id="banner">
-    <h2>Let's Go Out!</h2>
-</section>
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
 
-<section id="one" class="wrapper style1 special">
-    <div class="container">
-        <header class="major">
-            <h2>Šta se dešava?</h2>
-            <p>Događaji zakazani uskoro.</p>
-        </header>
-        <div class="row 150%">
-            @foreach (var item in Model)
-            {
-                <div class="4u 12u$(medium)">
-                    <section class="box">
-                        <i class="icon big rounded color1 fa-calendar"></i>
-                        <h3>@Html.DisplayFor(modelItem => item.naziv)</h3>
-                        <p>@Html.DisplayFor(modelItem => item.opis)</p>
-                    </section>
-                </div>
-            }
-        </div>
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Šta se dešava?</h1>
     </div>
-</section>
+    @foreach (var item in Model) {
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">@Html.DisplayFor(modelItem => item.naziv)</div>
+                <div class="panel-body">
+                    @Html.DisplayFor(modelItem => item.opis)
+                </div>
+            </div>
+        </div>
+    }
+</div>
