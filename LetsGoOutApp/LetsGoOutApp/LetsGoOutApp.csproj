@@ -220,6 +220,7 @@
     <Content Include="App_Data\aspnet-LetsGoOutApp-20160425052934_log.ldf">
       <DependentUpon>aspnet-LetsGoOutApp-20160425052934.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap-darkly.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
