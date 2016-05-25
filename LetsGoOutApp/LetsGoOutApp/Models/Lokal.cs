@@ -15,11 +15,6 @@ namespace LetsGoOutApp.Models
         public string grad { get; set; }
         public double lat { get; set; }
         public double lng { get; set; }
-        public string opis { get; set; }
-        
-    }
-    public class LokalDbContext : DbContext
-    {
-        public DbSet<Lokal> Lokal { get; set; }
+        public string opis { get; set; }   
     }
 }

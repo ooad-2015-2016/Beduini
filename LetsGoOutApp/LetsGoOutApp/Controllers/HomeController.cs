@@ -9,11 +9,11 @@ namespace LetsGoOutApp.Controllers
 {
     public class HomeController : Controller
     {
-        private DogadjajDbContext db = new DogadjajDbContext();
+        private LetsGoOutAppContext db = new LetsGoOutAppContext();
 
         public ActionResult Index()
         {
-            return View(db.Dogadjaj.OrderBy(x => x.datum).Take(3).ToList());
+            return View(db.Dogadjaji.OrderBy(x => x.datum).Take(3).ToList());
         }
 
         public ActionResult About()

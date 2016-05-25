@@ -6,7 +6,6 @@ using System.Web;
 
 namespace LetsGoOutApp.Models
 {
-
     public class Komentar
     {
         public int ID { get; set; }
@@ -14,9 +13,5 @@ namespace LetsGoOutApp.Models
         public string sadrzaj { get; set; }
         public float ocjena { get; set; }
         public DateTime datumKreiranja { get; set; }
-    }
-    public class KomentarDbContext : DbContext
-    {
-        public DbSet<Komentar> Komentar { get; set; }
     }
 }

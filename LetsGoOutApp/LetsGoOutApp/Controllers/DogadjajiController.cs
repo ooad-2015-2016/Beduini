@@ -12,12 +12,12 @@ namespace LetsGoOutApp.Controllers
 {
     public class DogadjajiController : Controller
     {
-        private DogadjajDbContext db = new DogadjajDbContext();
+        private LetsGoOutAppContext db = new LetsGoOutAppContext();
 
         // GET: Dogadjaji
         public ActionResult Index()
         {
-            return View(db.Dogadjaj.ToList());
+            return View(db.Dogadjaji.ToList());
         }
 
         // GET: Dogadjaji/Details/5
@@ -27,7 +27,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Dogadjaj dogadjaj = db.Dogadjaj.Find(id);
+            Dogadjaj dogadjaj = db.Dogadjaji.Find(id);
             if (dogadjaj == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace LetsGoOutApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Dogadjaj.Add(dogadjaj);
+                db.Dogadjaji.Add(dogadjaj);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Dogadjaj dogadjaj = db.Dogadjaj.Find(id);
+            Dogadjaj dogadjaj = db.Dogadjaji.Find(id);
             if (dogadjaj == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Dogadjaj dogadjaj = db.Dogadjaj.Find(id);
+            Dogadjaj dogadjaj = db.Dogadjaji.Find(id);
             if (dogadjaj == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace LetsGoOutApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Dogadjaj dogadjaj = db.Dogadjaj.Find(id);
-            db.Dogadjaj.Remove(dogadjaj);
+            Dogadjaj dogadjaj = db.Dogadjaji.Find(id);
+            db.Dogadjaji.Remove(dogadjaj);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

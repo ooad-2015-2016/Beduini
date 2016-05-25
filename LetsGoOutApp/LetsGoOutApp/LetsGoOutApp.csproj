@@ -214,6 +214,7 @@
     <Compile Include="Models\Dogadjaj.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Komentar.cs" />
+    <Compile Include="Models\LetsGoOutAppContext.cs" />
     <Compile Include="Models\Lokal.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Nalog.cs" />

@@ -12,12 +12,12 @@ namespace LetsGoOutApp.Controllers
 {
     public class NaloziController : Controller
     {
-        private NalogDbContext db = new NalogDbContext();
+        private LetsGoOutAppContext db = new LetsGoOutAppContext();
 
         // GET: Nalozi
         public ActionResult Index()
         {
-            return View(db.Nalog.ToList());
+            return View(db.Nalozi.ToList());
         }
 
         // GET: Nalozi/Details/5
@@ -27,7 +27,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nalog nalog = db.Nalog.Find(id);
+            Nalog nalog = db.Nalozi.Find(id);
             if (nalog == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace LetsGoOutApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Nalog.Add(nalog);
+                db.Nalozi.Add(nalog);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nalog nalog = db.Nalog.Find(id);
+            Nalog nalog = db.Nalozi.Find(id);
             if (nalog == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Nalog nalog = db.Nalog.Find(id);
+            Nalog nalog = db.Nalozi.Find(id);
             if (nalog == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace LetsGoOutApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Nalog nalog = db.Nalog.Find(id);
-            db.Nalog.Remove(nalog);
+            Nalog nalog = db.Nalozi.Find(id);
+            db.Nalozi.Remove(nalog);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

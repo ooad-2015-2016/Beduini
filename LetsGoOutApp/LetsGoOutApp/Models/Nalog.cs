@@ -13,15 +13,10 @@ namespace LetsGoOutApp.Models
         public string password { get; set; }
         public string email { get; set; }
         public DateTime datumKreiranja { get; set; }
+
         public void SetDatumKreiranja()
         {
             datumKreiranja = DateTime.Now;
         }
     }
-    
-    public class NalogDbContext : DbContext
-    {
-        public DbSet<Nalog> Nalog { get; set; }
-    }
-
 }

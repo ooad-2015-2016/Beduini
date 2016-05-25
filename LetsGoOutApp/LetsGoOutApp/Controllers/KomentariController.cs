@@ -12,12 +12,12 @@ namespace LetsGoOutApp.Controllers
 {
     public class KomentariController : Controller
     {
-        private KomentarDbContext db = new KomentarDbContext();
+        private LetsGoOutAppContext db = new LetsGoOutAppContext();
 
         // GET: Komentari
         public ActionResult Index()
         {
-            return View(db.Komentar.ToList());
+            return View(db.Komentari.ToList());
         }
 
         // GET: Komentari/Details/5
@@ -27,7 +27,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Komentar komentar = db.Komentar.Find(id);
+            Komentar komentar = db.Komentari.Find(id);
             if (komentar == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace LetsGoOutApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Komentar.Add(komentar);
+                db.Komentari.Add(komentar);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Komentar komentar = db.Komentar.Find(id);
+            Komentar komentar = db.Komentari.Find(id);
             if (komentar == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Komentar komentar = db.Komentar.Find(id);
+            Komentar komentar = db.Komentari.Find(id);
             if (komentar == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace LetsGoOutApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Komentar komentar = db.Komentar.Find(id);
-            db.Komentar.Remove(komentar);
+            Komentar komentar = db.Komentari.Find(id);
+            db.Komentari.Remove(komentar);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

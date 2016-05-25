@@ -12,12 +12,12 @@ namespace LetsGoOutApp.Controllers
 {
     public class LokaliController : Controller
     {
-        private LokalDbContext db = new LokalDbContext();
+        private LetsGoOutAppContext db = new LetsGoOutAppContext();
 
         // GET: Lokali
         public ActionResult Index()
         {
-            return View(db.Lokal.ToList());
+            return View(db.Lokali.ToList());
         }
 
         // GET: Lokali/Details/5
@@ -27,7 +27,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lokal lokal = db.Lokal.Find(id);
+            Lokal lokal = db.Lokali.Find(id);
             if (lokal == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace LetsGoOutApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Lokal.Add(lokal);
+                db.Lokali.Add(lokal);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lokal lokal = db.Lokal.Find(id);
+            Lokal lokal = db.Lokali.Find(id);
             if (lokal == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace LetsGoOutApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lokal lokal = db.Lokal.Find(id);
+            Lokal lokal = db.Lokali.Find(id);
             if (lokal == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace LetsGoOutApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Lokal lokal = db.Lokal.Find(id);
-            db.Lokal.Remove(lokal);
+            Lokal lokal = db.Lokali.Find(id);
+            db.Lokali.Remove(lokal);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
