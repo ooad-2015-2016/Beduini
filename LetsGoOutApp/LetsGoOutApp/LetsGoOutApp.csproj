@@ -201,7 +201,6 @@
     <Compile Include="Controllers\KomentariController.cs" />
     <Compile Include="Controllers\LokaliController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\NaloziController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -217,7 +216,6 @@
     <Compile Include="Models\LetsGoOutAppContext.cs" />
     <Compile Include="Models\Lokal.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Nalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -308,11 +306,6 @@
     <Content Include="Views\Lokali\Details.cshtml" />
     <Content Include="Views\Lokali\Edit.cshtml" />
     <Content Include="Views\Lokali\Index.cshtml" />
-    <Content Include="Views\Nalozi\Create.cshtml" />
-    <Content Include="Views\Nalozi\Delete.cshtml" />
-    <Content Include="Views\Nalozi\Details.cshtml" />
-    <Content Include="Views\Nalozi\Edit.cshtml" />
-    <Content Include="Views\Nalozi\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

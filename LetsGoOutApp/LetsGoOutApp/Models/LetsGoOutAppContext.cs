@@ -14,6 +14,5 @@ namespace LetsGoOutApp.Models
         public DbSet<Dogadjaj> Dogadjaji { get; set; }
         public DbSet<Komentar> Komentari { get; set; }
         public DbSet<Lokal> Lokali { get; set; }
-        public DbSet<Nalog> Nalozi { get; set; }
     }
 }
