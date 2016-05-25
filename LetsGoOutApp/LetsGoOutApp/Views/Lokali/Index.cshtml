@@ -12,25 +12,25 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.naziv)
+            @Html.DisplayNameFor(model => model.Naziv)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.adresa)
+            @Html.DisplayNameFor(model => model.Adresa)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.postanskiBroj)
+            @Html.DisplayNameFor(model => model.PostanskiBroj)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.grad)
+            @Html.DisplayNameFor(model => model.Grad)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.lat)
+            @Html.DisplayNameFor(model => model.Lat)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.lng)
+            @Html.DisplayNameFor(model => model.Lng)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.opis)
+            @Html.DisplayNameFor(model => model.Opis)
         </th>
         <th></th>
     </tr>
@@ -38,25 +38,25 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.naziv)
+            @Html.DisplayFor(modelItem => item.Naziv)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.adresa)
+            @Html.DisplayFor(modelItem => item.Adresa)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.postanskiBroj)
+            @Html.DisplayFor(modelItem => item.PostanskiBroj)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.grad)
+            @Html.DisplayFor(modelItem => item.Grad)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.lat)
+            @Html.DisplayFor(modelItem => item.Lat)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.lng)
+            @Html.DisplayFor(modelItem => item.Lng)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.opis)
+            @Html.DisplayFor(modelItem => item.Opis)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

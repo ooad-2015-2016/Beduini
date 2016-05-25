@@ -9,9 +9,9 @@ namespace LetsGoOutApp.Models
     public class Dogadjaj
     {
         public int ID { get; set; }
-        public DateTime datum { get; set; }
-        public string naziv { get; set; }
-        public string opis { get; set; }
-        public float cijena { get; set; }
+        public DateTime Datum { get; set; }
+        public string Naziv { get; set; }
+        public string Opis { get; set; }
+        public float Cijena { get; set; }
     }
 }

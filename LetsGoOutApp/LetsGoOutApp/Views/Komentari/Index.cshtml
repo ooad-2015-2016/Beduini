@@ -12,16 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.datum)
+            @Html.DisplayNameFor(model => model.Sadrzaj)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sadrzaj)
+            @Html.DisplayNameFor(model => model.Ocjena)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ocjena)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.datumKreiranja)
+            @Html.DisplayNameFor(model => model.DatumKreiranja)
         </th>
         <th></th>
     </tr>
@@ -29,16 +26,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.datum)
+            @Html.DisplayFor(modelItem => item.Sadrzaj)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.sadrzaj)
+            @Html.DisplayFor(modelItem => item.Ocjena)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ocjena)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.datumKreiranja)
+            @Html.DisplayFor(modelItem => item.DatumKreiranja)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

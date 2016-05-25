@@ -9,9 +9,8 @@ namespace LetsGoOutApp.Models
     public class Komentar
     {
         public int ID { get; set; }
-        public DateTime datum { get; set; }
-        public string sadrzaj { get; set; }
-        public float ocjena { get; set; }
-        public DateTime datumKreiranja { get; set; }
+        public string Sadrzaj { get; set; }
+        public float Ocjena { get; set; }
+        public DateTime DatumKreiranja { get; set; }
     }
 }

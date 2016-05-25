@@ -9,12 +9,12 @@ namespace LetsGoOutApp.Models
     public class Lokal
     {
         public int ID { get; set; }
-        public string naziv { get; set; }
-        public string adresa { get; set; }
-        public int postanskiBroj { get; set; }
-        public string grad { get; set; }
-        public double lat { get; set; }
-        public double lng { get; set; }
-        public string opis { get; set; }   
+        public string Naziv { get; set; }
+        public string Adresa { get; set; }
+        public int PostanskiBroj { get; set; }
+        public string Grad { get; set; }
+        public double Lat { get; set; }
+        public double Lng { get; set; }
+        public string Opis { get; set; }   
     }
 }
