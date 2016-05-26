@@ -13,7 +13,7 @@ namespace LetsGoOutApp.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Dogadjaji.OrderBy(x => x.Datum).Take(3).ToList());
+            return View(db.Dogadjaji.Where(x => x.Datum > DateTime.Now).OrderBy(x => x.Datum).Take(3).ToList());
         }
 
         public ActionResult About()
