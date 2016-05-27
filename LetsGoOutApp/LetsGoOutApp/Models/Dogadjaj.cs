@@ -13,5 +13,7 @@ namespace LetsGoOutApp.Models
         public string Naziv { get; set; }
         public string Opis { get; set; }
         public float Cijena { get; set; }
+        public int LokalID { get; set; }
+        public virtual Lokal Lokal { get; set; }
     }
 }
