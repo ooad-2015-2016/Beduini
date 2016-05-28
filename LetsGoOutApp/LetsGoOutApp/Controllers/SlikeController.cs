@@ -33,7 +33,7 @@ namespace LetsGoOutApp.Controllers
                     if (file != null && file.ContentLength > 0)
                     {
                         uploadedName = RandomName() + Path.GetExtension(file.FileName);
-                        file.SaveAs(Server.MapPath("~/App_Data/uploads/slike/" + uploadedName));
+                        file.SaveAs(Server.MapPath("~/uploads/slike/" + uploadedName));
 
                         // Sačuvaj u bazu
                         Slika slika = new Slika();
