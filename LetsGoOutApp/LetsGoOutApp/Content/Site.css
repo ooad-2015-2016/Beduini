@@ -28,3 +28,8 @@ textarea {
     border-radius: 10px;
     color: #000;
 }
+
+.lokal-slika {
+    border-radius: 10px;
+    width: 100%;
+}

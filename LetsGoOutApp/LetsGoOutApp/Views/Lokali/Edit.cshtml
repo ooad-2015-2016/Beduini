@@ -86,6 +86,15 @@
         @using (Html.BeginForm("Create", "Slike", FormMethod.Post, new { @class = "dropzone", @id = "slike" }))
         {
         }
+        <h3>Slike</h3>
+        <div class="row">
+            @foreach (var slika in Model.Slike)
+            {
+                <div class="col-md-6">
+                    <img class="lokal-slika" src="~/App_Data/uploads/slike/@slika.Naziv" />
+                </div>
+            }
+        </div>
     </div>
 </div>
 
