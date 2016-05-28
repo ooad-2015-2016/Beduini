@@ -23,8 +23,12 @@ namespace LetsGoOutApp
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/dropzone").Include(
+                      "~/Scripts/dropzone/dropzone.min.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-darkly.css",
+                      "~/Scripts/dropzone/dropzone.min.css",
                       "~/Content/site.css"));
         }
     }

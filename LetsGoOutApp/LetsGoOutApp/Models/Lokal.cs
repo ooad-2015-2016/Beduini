@@ -15,6 +15,7 @@ namespace LetsGoOutApp.Models
         public string Grad { get; set; }
         public double Lat { get; set; }
         public double Lng { get; set; }
-        public string Opis { get; set; }   
+        public string Opis { get; set; }
+        public virtual ICollection<Slika> Slike { get; set; }
     }
 }
