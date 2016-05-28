@@ -39,6 +39,7 @@ namespace LetsGoOutApp.Controllers
                         Slika slika = new Slika();
                         slika.Naziv = uploadedName;
                         lokal.Slike.Add(slika);
+                        db.SaveChanges();
                     }
                 }
                 catch (Exception)
