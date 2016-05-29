@@ -9,66 +9,87 @@
 <div>
     <h4>Lokal</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Naziv)
-        </dt>
+    <div class="row">
+        <div class="col-md-6">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Naziv)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Naziv)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Naziv)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Adresa)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Adresa)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Adresa)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Adresa)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PostanskiBroj)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PostanskiBroj)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PostanskiBroj)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.PostanskiBroj)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Grad)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Grad)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Grad)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Grad)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Lat)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Lat)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Lat)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Lat)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Lng)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Lng)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Lng)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Lng)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Opis)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Opis)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Opis)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Opis)
+                </dd>
 
-    </dl>
+            </dl>
+        </div>
+        <div class="col-md-6">
+            <div class="galleria">
+                @foreach (var slika in Model.Slike)
+                {
+                    <img src="~/uploads/slike/@slika.Naziv" />
+                }
+            </div>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/galleria")
+    <script>
+        Galleria.loadTheme('/Scripts/themes/classic/galleria.classic.min.js');
+        Galleria.run('.galleria');
+    </script>
+}
