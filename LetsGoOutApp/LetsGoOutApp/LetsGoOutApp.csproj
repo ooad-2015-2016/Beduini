@@ -339,6 +339,7 @@
     <Content Include="Views\Lokali\Edit.cshtml" />
     <Content Include="Views\Lokali\Index.cshtml" />
     <Content Include="Scripts\LICENSE" />
+    <Content Include="Views\Lokali\PartialGalleria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\uploads\slike\" />

@@ -1,0 +1,13 @@
+﻿@model LetsGoOutApp.Models.Lokal
+
+@if (Model.Slike.Count == 0)
+            {
+    <img src="~/images/none.png" />
+}
+else
+{
+    foreach (var slika in Model.Slike)
+    {
+        <img src="~/uploads/slike/@slika.Naziv" />
+    }
+}

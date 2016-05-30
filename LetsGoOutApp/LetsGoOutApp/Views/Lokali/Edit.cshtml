@@ -84,10 +84,7 @@
     </div>
     <div class="col-md-6">
         <div class="galleria">
-            @foreach (var slika in Model.Slike)
-            {
-                <img src="~/uploads/slike/@slika.Naziv" />
-            }
+            @Html.Partial("PartialGalleria", Model)
         </div>
         @using (Html.BeginForm("Create", "Slike", FormMethod.Post, new { @class = "dropzone", @id = "slike" }))
         {
