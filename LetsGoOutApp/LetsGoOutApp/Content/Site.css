@@ -34,3 +34,7 @@ textarea {
     height: 25em;
     margin-bottom: 1em;
 }
+
+.spacing {
+    height: 1em;
+}
