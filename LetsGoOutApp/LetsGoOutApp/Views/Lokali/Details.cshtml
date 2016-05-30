@@ -31,18 +31,25 @@
             </span>
         </h3>
         <hr />
-        @foreach (var komentar in Model.Komentari.OrderByDescending(x => x.DatumKreiranja).Take(2).ToList())
+        @if (Model.Komentari.Count == 0)
         {
-            <div class="komentar">
-                <select class="ocjena" data-readonly="1" data-initial-rating="@komentar.Ocjena">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <p>@komentar.Sadrzaj</p>
-            </div>
+            <p>Nema zabilježenih komentara.</p>
+        }
+        else
+        {
+            foreach (var komentar in Model.Komentari.OrderByDescending(x => x.DatumKreiranja).Take(2).ToList())
+            {
+                <div class="komentar">
+                    <select class="ocjena" data-readonly="1" data-initial-rating="@komentar.Ocjena">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <p>@komentar.Sadrzaj</p>
+                </div>
+            }
         }
         <hr />
         @using (Html.BeginForm("Create", "Komentari"))
