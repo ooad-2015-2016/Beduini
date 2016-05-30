@@ -14,5 +14,10 @@ namespace LetsGoOutApp.Models
         public DateTime DatumKreiranja { get; set; }
         public int LokalID { get; set; }
         public virtual Lokal Lokal { get; set; }
+
+        public Komentar()
+        {
+            DatumKreiranja = DateTime.Now;
+        }
     }
 }

@@ -42,3 +42,7 @@ textarea {
 .novi-komentar {
     max-width: none;
 }
+
+.komentar {
+    margin-bottom: 1.5em;
+}

@@ -18,5 +18,16 @@ namespace LetsGoOutApp.Models
         public string Opis { get; set; }
         public virtual ICollection<Slika> Slike { get; set; }
         public virtual ICollection<Komentar> Komentari { get; set; }
+
+        public int IzracunajOcjenu()
+        {
+            double suma = 0, broj = 0;
+            foreach (Komentar komentar in Komentari)
+            {
+                suma += komentar.Ocjena;
+                broj++;
+            }
+            return (int) (suma / broj);
+        }
     }
 }

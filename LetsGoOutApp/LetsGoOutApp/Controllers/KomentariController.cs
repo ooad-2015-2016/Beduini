@@ -46,16 +46,15 @@ namespace LetsGoOutApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,datum,sadrzaj,ocjena,datumKreiranja")] Komentar komentar)
+        public ActionResult Create([Bind(Include = "ID,Sadrzaj,Ocjena,DatumKreiranja,LokalID")] Komentar komentar)
         {
             if (ModelState.IsValid)
             {
                 db.Komentari.Add(komentar);
                 db.SaveChanges();
-                return RedirectToAction("Index");
             }
 
-            return View(komentar);
+            return RedirectToAction("Details", "Lokali", new { id = komentar.LokalID });
         }
 
         // GET: Komentari/Edit/5

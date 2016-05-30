@@ -21,7 +21,7 @@
         <h3>
             Ocjena
             <span class="pull-right">
-                <select class="ocjena" data-readonly="1">
+                <select class="ocjena" data-readonly="1" data-initial-rating="@Model.IzracunajOcjenu()">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -33,8 +33,8 @@
         <hr />
         @foreach (var komentar in Model.Komentari.OrderByDescending(x => x.DatumKreiranja).Take(2).ToList())
         {
-            <div>
-                <select class="ocjena" data-readonly="1">
+            <div class="komentar">
+                <select class="ocjena" data-readonly="1" data-initial-rating="@komentar.Ocjena">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -48,13 +48,14 @@
         @using (Html.BeginForm("Create", "Komentari"))
         {
             @Html.AntiForgeryToken()
+            @Html.Hidden("LokalID", Model.ID)
 
             <div class="form-group">
-                <textarea name="sadrzaj" rows="5" class="novi-komentar form-control" placeholder="Unesite Vaš dojam o ovom lokalu..."></textarea>
+                <textarea name="Sadrzaj" rows="5" class="novi-komentar form-control" placeholder="Unesite Vaš dojam o ovom lokalu..."></textarea>
             </div>
             <div class="form-group">
                 <div class="col-md-8">
-                    <select class="ocjena">
+                    <select class="ocjena" name="Ocjena">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
