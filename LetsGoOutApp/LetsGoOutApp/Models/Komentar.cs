@@ -12,7 +12,7 @@ namespace LetsGoOutApp.Models
         public string Sadrzaj { get; set; }
         public float Ocjena { get; set; }
         public DateTime DatumKreiranja { get; set; }
-        public int DogadjajID { get; set; }
-        public virtual Dogadjaj Dogadjaj { get; set; }
+        public int LokalID { get; set; }
+        public virtual Lokal Lokal { get; set; }
     }
 }

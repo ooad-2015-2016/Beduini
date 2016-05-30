@@ -17,5 +17,6 @@ namespace LetsGoOutApp.Models
         public double Lng { get; set; }
         public string Opis { get; set; }
         public virtual ICollection<Slika> Slike { get; set; }
+        public virtual ICollection<Komentar> Komentari { get; set; }
     }
 }
