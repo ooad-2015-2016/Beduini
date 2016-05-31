@@ -9,13 +9,15 @@
         <h1>Šta se dešava?</h1>
     </div>
     @foreach (var item in Model) {
-        <div class="col-sm-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">@Html.DisplayFor(modelItem => item.Naziv)</div>
-                <div class="panel-body">
-                    @Html.DisplayFor(modelItem => item.Opis)
+        <a href="@Url.Action("Details", "Dogadjaji", new { id = item.ID })">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">@Html.DisplayFor(modelItem => item.Naziv)</div>
+                    <div class="panel-body">
+                        @Html.DisplayFor(modelItem => item.Opis)
+                    </div>
                 </div>
             </div>
-        </div>
+        </a>
     }
 </div>

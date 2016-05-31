@@ -16,13 +16,6 @@ namespace LetsGoOutApp.Controllers
             return View(db.Dogadjaji.Where(x => x.Datum > DateTime.Now).OrderBy(x => x.Datum).Take(3).ToList());
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

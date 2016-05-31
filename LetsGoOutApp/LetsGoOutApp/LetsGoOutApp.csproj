@@ -210,6 +210,7 @@
     <Compile Include="Controllers\KomentariController.cs" />
     <Compile Include="Controllers\LokaliController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SlikeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,6 +226,7 @@
     <Compile Include="Models\LetsGoOutAppContext.cs" />
     <Compile Include="Models\Lokal.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Slika.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -255,16 +257,46 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\LetsGoOutApp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\dropzone\basic.css" />
+    <Content Include="Scripts\dropzone\basic.min.css" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.js" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\dropzone\dropzone.css" />
+    <Content Include="Scripts\dropzone\dropzone.js" />
+    <Content Include="Scripts\dropzone\dropzone.min.css" />
+    <Content Include="Scripts\dropzone\dropzone.min.js" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\galleria-1.4.2.js" />
+    <Content Include="Scripts\galleria-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\plugins\flickr\flickr-demo.html" />
+    <Content Include="Scripts\plugins\flickr\flickr-loader.gif" />
+    <Content Include="Scripts\plugins\flickr\galleria.flickr.js" />
+    <Content Include="Scripts\plugins\flickr\galleria.flickr.min.js" />
+    <Content Include="Scripts\plugins\flickr\loader.gif" />
+    <Content Include="Scripts\plugins\history\galleria.history.js" />
+    <Content Include="Scripts\plugins\history\galleria.history.min.js" />
+    <Content Include="Scripts\plugins\history\history-demo.html" />
+    <Content Include="Scripts\plugins\picasa\galleria.picasa.js" />
+    <Content Include="Scripts\plugins\picasa\galleria.picasa.min.js" />
+    <Content Include="Scripts\plugins\picasa\loader.gif" />
+    <Content Include="Scripts\plugins\picasa\picasa-demo.html" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\themes\classic\classic-demo.html" />
+    <Content Include="Scripts\themes\classic\classic-loader.gif" />
+    <Content Include="Scripts\themes\classic\classic-map.png" />
+    <Content Include="Scripts\themes\classic\galleria.classic.css" />
+    <Content Include="Scripts\themes\classic\galleria.classic.js" />
+    <Content Include="Scripts\themes\classic\galleria.classic.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -277,7 +309,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -315,14 +346,15 @@
     <Content Include="Views\Lokali\Details.cshtml" />
     <Content Include="Views\Lokali\Edit.cshtml" />
     <Content Include="Views\Lokali\Index.cshtml" />
+    <Content Include="Scripts\LICENSE" />
+    <Content Include="Views\Lokali\PartialGalleria.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\uploads\slike\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605251245195_Init.resx">

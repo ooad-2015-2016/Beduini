@@ -23,9 +23,20 @@ namespace LetsGoOutApp
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/dropzone").Include(
+                      "~/Scripts/dropzone/dropzone.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/galleria").Include(
+                      "~/Scripts/galleria-1.4.2.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/barrating").Include(
+                      "~/Scripts/jquery.barrating.min.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-darkly.css",
-                      "~/Content/site.css"));
+                      "~/Scripts/dropzone/dropzone.min.css",
+                      "~/Content/site.css",
+                      "~/Content/bootstrap-stars.css"));
         }
     }
 }
