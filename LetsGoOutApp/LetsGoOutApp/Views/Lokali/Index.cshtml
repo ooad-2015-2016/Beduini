@@ -1,9 +1,49 @@
 ﻿@model IEnumerable<LetsGoOutApp.Models.Lokal>
+   
 
 @{
     ViewBag.Title = "Index";
 }
+@{
+    var lats = new List<double>();
+    var lngs = new List<double>();
+    foreach (var item in Model)
+    {
+        lats.Add(item.Lat);
+        lngs.Add(item.Lng);
+    }
+}
 
+
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+ 
+ 
+    
+    function initialize() {
+        var mapProp = {
+            center: new google.maps.LatLng(43.8577264, 18.4179453),
+            zoom:15,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+        
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(43.8592965,18.4233594),
+            map: map,
+        });
+  
+        
+      
+
+       marker.setMap(map);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="googleMap" style="width:1200px;height:600px;"></div>
 <h2>Index</h2>
 
 <p>
@@ -35,7 +75,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Naziv)
@@ -59,11 +100,13 @@
             @Html.DisplayFor(modelItem => item.Opis)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
         </td>
     </tr>
 }
-
+  
+     
 </table>
+
