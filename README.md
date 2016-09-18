@@ -1,10 +1,4 @@
-# Beduini
-
-Članovi tima:
-1. Sajra Muratović
-2. Mustafa Mahmutović
-3. Mirza Ohranović
-4. Sanil Musić
+﻿
 
 ### Opis Teme
 Sistem za rezervisanje, ocjenjivanje i pretragu lokala, restorana i pub-ova. Korisniku obezbijeđuje zgodan način za organizovanje sastanaka ili izlazaka. Olakšava izbor lokala, a poslodavcu upravljanje rezervacijama.
